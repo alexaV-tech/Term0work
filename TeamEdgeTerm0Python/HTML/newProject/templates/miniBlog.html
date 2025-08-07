@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>{{title}}</h1>
+    <h3>{{message}}<h3>
+        <p>12-year-old Percy Jackson learns he's a demigod and the son of Poseidon, the sea god. After being accused of stealing Zeus's master lightning bolt, Percy embarks on a quest across the United States to clear his name and prevent a war between the gods. He's joined by his friends Annabeth, daughter of Athena, and Grover, a satyr. Along the way, they face mythical monsters and learn about Percy's powers and the complex relationships between the gods</p>
+    <h3>More Info<h3>
+       <a href="https://rickriordan.com/series/percy-jackson-and-the-olympians/">here</a>
+    
+      
+       <h1>Add new Book</h1>
+       <form methods="POST" actions="/add">
+        {{form.task.lable }}{{form.task(size=30)}} <br>
+        <input type="submit" value="add book">
+       </form>
+       {% if form.errors %}<ul class = "errors">
+        {% for error in form.errors %}
+       <li>{{error}}<li>
+        {%endfor%}
+       </ul>
+
+</body>
+</html>

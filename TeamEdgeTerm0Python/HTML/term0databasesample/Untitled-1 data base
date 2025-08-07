@@ -1,0 +1,25 @@
+-- database: /Users/student/TeamEdgeTerm0Python/HTML/term0databasesample/test.db
+
+SELECT title FROM movies WHERE runtime>120;
+SELECT 
+AVG(runtime)
+FROM movies
+WHERE release_DATE<2000;
+SELECT 
+AVG(imdb_rating)
+FROM movies
+WHERE release_DATE>2005 AND release_DATE<2015;
+
+SELECT director, COUNT(director) AS director_count
+FROM movies GROUP BY director
+ORDER BY director_count DESC
+LIMIT 1
+;
+
+SELECT genre, AVG(imdb_rating) AS genre_rating
+FROM movies GROUP BY genre
+ORDER BY genre_rating ASC
+LIMIT 1;
+
+
+

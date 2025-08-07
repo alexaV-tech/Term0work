@@ -1,0 +1,51 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>The Villainess's Escape</title>
+    <style>
+        body {
+            background-image: url('{{ image_url }}');
+            background-size: cover;
+            color: rgb(246, 234, 223);
+            font-family: serif;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgb(44, 34, 27);
+            padding: 40px;
+            text-shadow: 2px 2px 4px #000;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+        }
+        input[type="submit"] {
+            padding: 10px;
+        }
+        .box {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            max-width: 1000px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>{{ room_name }}</h1> 
+        <p>{{ description }}</p>
+        {% if items %}
+            <p><strong>You see:</strong> {{ items | join(', ') }}</p>
+        {% endif %}
+        <p><strong>Exits:</strong> {{ exits | join(', ') }}</p>
+        <p><strong>Inventory:</strong> {{ inventory | join(', ') if inventory else 'empty' }}</p>
+        {% if message %}
+            <p><em>{{ message }}</em></p>
+        {% endif %}
+        <form method="post">
+            <input type="text" name="command" placeholder="Enter command (e.g. 'go east')" autofocus> 
+            <input type="submit" value="Submit"> 
+        </form>
+    </div>
+</body>
+</html> 

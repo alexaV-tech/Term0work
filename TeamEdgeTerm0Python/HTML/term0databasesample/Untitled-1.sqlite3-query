@@ -1,0 +1,7 @@
+-- database: ./test2.db
+
+-- Use the ▷ button in the top right corner to run the entire file.
+--hello
+SELECT title, author
+FROM books
+WHERE publish_Year > 2000;

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- <form action="/submit_quiz" method="post"></form>
+     {% for question in questions %}
+            <p>{{ question.question }}</p> 
+            {% for choice in question.choices %}
+                <label>
+                    <input type="radio" name="{{ question.id }}" value="{{ choice }}" required>
+                    {{ choice }}
+                </label><br>
+            {% endfor %}
+            <br>
+        {% endfor %}
+        <button type="submit">Submit Quiz</button>
+</form> -->
+
+
+
+ <!-- <form action="/submit_quiz" method="post">
+        {% for question in questions %}
+            <p>{{ loop.index }}. {{ question.question }}</p>
+            {% for choice in question.choices %}
+                <input type="radio" id="{{ question.id }}_{{ choice }}" name="{{ question.id }}" value="{{ choice }}" required>
+                <label for="{{ question.id }}_{{ choice }}">{{ choice }}</label><br>
+            {% endfor %}
+            <br>
+        {% endfor %}
+        <button type="submit">Submit Quiz</button>
+    </form> -->
+
+
+    <form action="/submit_quiz" method="post">
+    {% for question in questions %}
+        <p>{{ question.question }}</p>
+        {% for choice in question.choices %}
+            <label>
+                <input type="radio" name="{{ question.id }}" value="{{ choice }}" required>
+                 {{ choice }}
+                <!-- {{ choice }}. holds the actual text of the choice -->
+            </label><br>
+        {% endfor %}
+        <br>
+    {% endfor %}
+    <button type="submit">Submit Quiz</button>
+</form>
+
+
+
+
+</body>
+</html>
